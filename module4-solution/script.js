@@ -67,4 +67,46 @@
       helloSpeaker.speak(names[name]);
     }
   }
+
+  var greetingArray = names.map(mapFunction);
+  console.log("Array using map function: \n");
+
+  for (var greeting in greetingArray) {
+    console.log(greetingArray[greeting]);
+  }
+
+  var reducedObject = {
+    hello: [],
+    goodbye: []
+  };
+  var ans = names.reduce(reduceFunction, reducedObject);
+  //alert('reducedObject ' + JSON.stringify(reducedObject));
+
+  console.log("Arrays after reduce:\n");
+  for (var name in reducedObject.hello) {
+    console.log(reducedObject.hello[name]);
+  }
+  for (var name in reducedObject.goodbye) {
+    console.log(reducedObject.goodbye[name]);
+  }
+
+  function mapFunction(name) {
+    
+    if (name.charAt(0).toLowerCase() == "j") {
+      return byeSpeaker.speakSimple(name);
+    }
+    else {
+      return helloSpeaker.speakSimple(name);
+    }
+  }
+
+  function reduceFunction(obj, item) {
+    if (item.charAt(0).toLowerCase() == "j") {
+      obj.goodbye.push(byeSpeaker.speakSimple(item));
+    }
+    else {
+      obj.hello.push(helloSpeaker.speakSimple(item));
+    }
+    return obj;
+  }
 })();
