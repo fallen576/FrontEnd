@@ -59,6 +59,7 @@ a {
 
 p {
   margin-left: 10px;
+  margin-right: 10px;
 }
   /********** Large devices only **********/
   @media (min-width: 992px) {
