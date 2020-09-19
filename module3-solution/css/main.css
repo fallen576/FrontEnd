@@ -39,14 +39,20 @@ a {
 
 .menu-title{
   color: black; 
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .title {
   text-align: center;
   margin: 10;
 }
-  
+.menu-item {
+  background-color: #999999;
+  margin: 5;
+}
+.box-name {
+  text-align: center;
+}
   /********** Large devices only **********/
   @media (min-width: 992px) {
       #nav-toggler {
