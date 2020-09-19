@@ -40,22 +40,32 @@ a {
 .menu-title{
   color: black; 
   padding-left: 20px;
+  font-family: sans-serif;
 }
 
 .title {
-  text-align: center;
   margin: 10;
+  font: revert;
+  font-size: x-large;
 }
 .menu-item {
   background-color: #999999;
   margin: 5;
 }
-.box-name {
-  text-align: center;
+
+#chicken, #sushi, #beef {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+p {
+  margin-left: 10px;
 }
   /********** Large devices only **********/
   @media (min-width: 992px) {
       #nav-toggler {
+        display: none;
+      }
+      #navbarSupportedContent {
         display: none;
       }
   }
@@ -63,6 +73,9 @@ a {
   /********** Medium devices only **********/
   @media (min-width: 768px) and (max-width: 991px) {
     #nav-toggler {
+      display: none;
+    }
+    #navbarSupportedContent {
       display: none;
     }
   }
