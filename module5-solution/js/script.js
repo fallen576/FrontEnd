@@ -155,13 +155,11 @@ dc.generateStarRating = function() {
       alert(rand);
       document.getElementById("star-rating").innerHTML = "";
 
-      var updatedHTML = "";
-
       for (var i = 0; i < rand; i++) {
-        updatedHTML += insertProperty(starRatingHtml, "star"+i, "fa fa-star");
+        starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star");
       }
       while (i != rand) {
-        updatedHTML += insertProperty(starRatingHtml, "start"+i, "fa fa-star-o");
+        starRatingHtml += insertProperty(starRatingHtml, "start"+i, "fa fa-star-o");
         i++;
       }
       
