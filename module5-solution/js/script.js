@@ -163,7 +163,7 @@ dc.generateStarRating = function() {
         i++;
       }
       
-      insertHtml("#star-rating", updatedHTML);
+      insertHtml("#star-rating", starRatingHtml);
     },
     false);
 };
