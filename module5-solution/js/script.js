@@ -64,7 +64,7 @@ var switchMenuToActive = function () {
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
 
-  alert(randomNumber());
+  
 
 // TODO: STEP 0: Look over the code from
 // *** start ***
@@ -155,15 +155,11 @@ dc.loadMenuCategories = function () {
 };
 
 dc.generateStarRating = function() {
-  $ajaxUtils.sendGetRequest(
-    starRatingHtml,
-    () => {
-      alert("in custom callback");
-      var randomNumber = randomNumber();
-      var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
-      insertHtml("#star-rating", starRatingHtml);
-
-    });
+  alert(randomNumber());
+  document.getElementById("star-rating").innerHTML = "";
+  var randomNumber = randomNumber();
+  var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
+  insertHtml("#star-rating", starRatingHtml);
 }
 
 // Load the menu items view
