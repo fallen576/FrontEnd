@@ -155,9 +155,9 @@ dc.loadMenuCategories = function () {
 };
 
 dc.generateStarRating = function() {
-  alert(randomNumber());
+  var rand = Math.floor(Math.random() * 5) + 1;
+  alert(rand);
   document.getElementById("star-rating").innerHTML = "";
-  var randomNumber = Math.floor(Math.random() * 5) + 1;
   var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
   insertHtml("#star-rating", starRatingHtml);
 };
