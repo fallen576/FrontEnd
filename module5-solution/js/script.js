@@ -157,10 +157,10 @@ dc.loadMenuCategories = function () {
 dc.generateStarRating = function() {
   alert(randomNumber());
   document.getElementById("star-rating").innerHTML = "";
-  var randomNumber = randomNumber();
+  var randomNumber = Math.floor(Math.random() * 5) + 1;
   var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
   insertHtml("#star-rating", starRatingHtml);
-}
+};
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
@@ -350,11 +350,6 @@ function insertItemPortionName(html,
   html = insertProperty(html, portionPropName, portionValue);
   return html;
 }
-
-function randomNumber() {
-  return Math.floor(Math.random() * 5) + 1;
-}
-
 
 global.$dc = dc;
 
