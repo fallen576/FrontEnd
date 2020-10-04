@@ -162,6 +162,7 @@ dc.generateStarRating = function() {
       }
       while (i != rand) {
         updatedHTML += insertProperty(starRatingHtml, "start"+i, "fa fa-star-o");
+        i++;
       }
       
       insertHtml("#star-rating", updatedHTML);
