@@ -154,8 +154,17 @@ dc.generateStarRating = function() {
       var rand = Math.floor(Math.random() * 5) + 1;
       alert(rand);
       document.getElementById("star-rating").innerHTML = "";
-      var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
-      insertHtml("#star-rating", starRatingHtml);
+
+      var updatedHTML = "";
+
+      for (var i = 0; i < rand; i++) {
+        updatedHTML += insertProperty(starRatingHtml, "star"+i, "fa fa-star");
+      }
+      while (i != rand) {
+        updatedHTML += insertProperty(starRatingHtml, "start"+i, "fa fa-star-o");
+      }
+      
+      insertHtml("#star-rating", updatedHTML);
     },
     false);
 };
