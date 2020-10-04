@@ -118,8 +118,21 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
+      /*
       alert('short_name ' + chosenCategoryShortName + " added quotes");
-      homeHtmlUrl = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
+      alert("homeHtmlToInsertIntoMainPage line 123" + homeHtmlToInsertIntoMainPage);
+      */
+
+
+      $ajaxUtils.sendGetRequest(
+        homeHtmlUrl,
+        function (homeHtmlUrl) {
+          
+          var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
+          insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+
+
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
@@ -128,6 +141,8 @@ function buildAndShowHomeHTML (categories) {
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+  },
+  false);
 }
 
 
@@ -207,6 +222,7 @@ function buildCategoriesViewHtml(categories,
       insertProperty(html,
                      "short_name",
                      short_name);
+    alert("html line 210 " + html);                     
     finalHtml += html;
   }
 
