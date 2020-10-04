@@ -155,11 +155,16 @@ dc.loadMenuCategories = function () {
 };
 
 dc.generateStarRating = function() {
-  var rand = Math.floor(Math.random() * 5) + 1;
-  alert(rand);
-  document.getElementById("star-rating").innerHTML = "";
-  var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
-  insertHtml("#star-rating", starRatingHtml);
+  $ajaxUtils.sendGetRequest(
+    starRatingHtml,
+    function () {
+      var rand = Math.floor(Math.random() * 5) + 1;
+      alert(rand + " " + starRatingHtml);
+      document.getElementById("star-rating").innerHTML = "";
+      var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
+      insertHtml("#star-rating", starRatingHtml);
+    },
+    false);
 };
 
 // Load the menu items view
