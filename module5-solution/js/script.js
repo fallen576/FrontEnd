@@ -124,21 +124,6 @@ function buildAndShowHomeHTML (categories) {
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-      /*
-        $ajaxUtils.sendGetRequest(
-        homeHtmlUrl,
-        function (homeHtmlUrl) {
-          
-        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
-        
-        // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
-        // Use the existing insertHtml function for that purpose. Look through this code for an example
-        // of how to do that.
-        insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
-    },
-    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-    */
   },
   false);
 }
@@ -167,7 +152,7 @@ dc.generateStarRating = function() {
     starRatingHtml,
     function (starRatingHtml) {
       var rand = Math.floor(Math.random() * 5) + 1;
-      alert(rand + " " + starRatingHtml);
+      alert(rand);
       document.getElementById("star-rating").innerHTML = "";
       var updatedHTML = insertProperty(starRatingHtml, "", "fa fa-star");
       insertHtml("#star-rating", starRatingHtml);
