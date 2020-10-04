@@ -157,7 +157,7 @@ dc.loadMenuCategories = function () {
 dc.generateStarRating = function() {
   $ajaxUtils.sendGetRequest(
     starRatingHtml,
-    function () {
+    function (starRatingHtml) {
       var rand = Math.floor(Math.random() * 5) + 1;
       alert(rand + " " + starRatingHtml);
       document.getElementById("star-rating").innerHTML = "";
