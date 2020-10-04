@@ -37,16 +37,16 @@
         
         <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li id="navHomeButton" class="visible-xs active">
+            <li id="navHomeButton">
               <a href="index.html">
-                <span class="glyphicon glyphicon-home"></span> Home</a>
+                <span id="star-rating"></span></a>
             </li>
             <li id="navMenuButton">
               <a href="#" onclick="$dc.loadMenuCategories();">
                 <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
             </li>
             <li>
-              <a href="/snippets/about.html">
+              <a href="#" onclick="$dc.generateStartRating();">
                 <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
             </li>
             <li>
