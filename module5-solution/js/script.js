@@ -63,6 +63,8 @@ var switchMenuToActive = function () {
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
 
+  alert(randomNumber());
+
 // TODO: STEP 0: Look over the code from
 // *** start ***
 // to
@@ -93,7 +95,6 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-  alert(JSON.stringify(categories));
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -103,8 +104,6 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
       var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
-      alert("rando " + JSON.stringify(chosenCategoryShortName) +  " short name " + chosenCategoryShortName);
-      //{"id":92,"short_name":"NF","name":"Mei Fan (Very Fine Noodles)","special_instructions":"","url":"https://davids-restaurant.herokuapp.com/categories/92.json"}
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
@@ -118,26 +117,16 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-      /*
-      alert('short_name ' + chosenCategoryShortName + " added quotes");
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
-      alert("homeHtmlToInsertIntoMainPage line 123" + homeHtmlToInsertIntoMainPage);
-      */
-
-
       $ajaxUtils.sendGetRequest(
         homeHtmlUrl,
         function (homeHtmlUrl) {
           
-          var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
-          insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
-
-
-      // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
-      // Use the existing insertHtml function for that purpose. Look through this code for an example
-      // of how to do that.
-      //insertHtml("#main-content", homeHtmlUrl);
+        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", "'"+chosenCategoryShortName+"'");
+        
+        // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
+        // Use the existing insertHtml function for that purpose. Look through this code for an example
+        // of how to do that.
+        insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
@@ -221,8 +210,7 @@ function buildCategoriesViewHtml(categories,
     html =
       insertProperty(html,
                      "short_name",
-                     short_name);
-    alert("html line 210 " + html);                     
+                     short_name);                   
     finalHtml += html;
   }
 
@@ -354,6 +342,10 @@ function insertItemPortionName(html,
   portionValue = "(" + portionValue + ")";
   html = insertProperty(html, portionPropName, portionValue);
   return html;
+}
+
+function randomNumber() {
+  return Math.floor(Math.random() * 5) + 1;
 }
 
 
