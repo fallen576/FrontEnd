@@ -159,7 +159,7 @@ dc.generateStarRating = function() {
         starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star");
       }
       while (i != 6) {
-        starRatingHtml = insertProperty(starRatingHtml, "start"+i, "fa fa-star-o");
+        starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star-o");
         i++;
       }
       
