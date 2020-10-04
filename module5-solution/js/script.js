@@ -158,8 +158,9 @@ dc.generateStarRating = function() {
       for (var i = 0; i <= rand; i++) {
         starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star");
       }
-      while (i != 6) {
+      while (i < 6) {
         starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star-o");
+        console.log(starRatingHtml);
         i++;
       }
       
