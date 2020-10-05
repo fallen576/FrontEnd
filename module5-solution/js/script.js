@@ -157,14 +157,14 @@ dc.generateStarRating = function() {
       for (var i = 0; i <= rand; i++) {
         starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star");
       }
-      var count_of_stars = i;
+     // var count_of_stars = i;
       while (i < 6) {
         starRatingHtml = insertProperty(starRatingHtml, "star"+i, "fa fa-star-o");
         i++;
       }
       
       insertHtml("#star-rating", starRatingHtml);
-      document.getElementById("text-rating").value =  count_of_stars + "-star rating";
+      //document.getElementById("text-rating").value =  count_of_stars + "-star rating";
     },
     false);
 };
